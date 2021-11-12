@@ -1,0 +1,19 @@
+$primary: hsl(0, 0%, 63%);
+$secondary: hsl(0, 0%, 27%);
+$light: hsl(0, 0%, 100%);
+$dark: hsl(0, 0%, 0%);
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark,
+);
+
+$font-size-root: 12px;
+
+$font-weight-normal: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
