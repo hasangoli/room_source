@@ -28,6 +28,7 @@ const Header = () => {
       >
         <div
           className={`mobile-header__backdrop ${!showMenu && "d-none"}`}
+          onClick={() => setShowMenu(false)}
         ></div>
 
         <Navbar className="py-5 px-3">
@@ -125,6 +126,14 @@ const Header = () => {
           />
         </a>
       </div>
+
+      <Row className="desktop-header d-none d-lg-block g-0">
+        <Col
+          xs={7}
+          style={{ backgroundImage: `url(${items[item].desktopImage})` }}
+        ></Col>
+        <Col xs={5}></Col>
+      </Row>
     </header>
   );
 };
