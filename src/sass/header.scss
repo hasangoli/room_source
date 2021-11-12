@@ -55,4 +55,38 @@ header {
       }
     }
   }
+
+  .desktop-content {
+    &__controls {
+      bottom: 0;
+      left: 0;
+
+      &__action {
+        &--title {
+          letter-spacing: 0.5rem;
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      &--left-control,
+      &--right-control {
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .desktop-content {
+    &__title {
+      font-size: 3.7rem;
+    }
+  }
 }

@@ -127,12 +127,79 @@ const Header = () => {
         </a>
       </div>
 
-      <Row className="desktop-header d-none d-lg-block g-0">
+      <Row className="desktop-header d-none d-lg-flex g-0 position-relative">
+        <Navbar className="py-5 px-3 position-absolute top-0 px-5">
+          <Navbar.Brand href="#home">
+            <img src="./images/logo.svg" alt="React Bootstrap logo" />
+          </Navbar.Brand>
+
+          <Nav>
+            <Nav.Item>
+              <Nav.Link href="/" className="text-light fw-bold ps-5">
+                home
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/" className="text-light fw-bold ps-5">
+                shop
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/" className="text-light fw-bold ps-5">
+                about
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/" className="text-light fw-bold ps-5">
+                contact
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar>
+
+        <Col className="__desktop-image" lg={7}>
+          <Image src={items[item].desktopImage} alt={items[item].title} fluid />
+        </Col>
+
         <Col
-          xs={7}
-          style={{ backgroundImage: `url(${items[item].desktopImage})` }}
-        ></Col>
-        <Col xs={5}></Col>
+          lg={5}
+          className="desktop-content d-flex flex-column align-items-start justify-content-center px-5 pb-5 position-relative"
+        >
+          <h2 className="desktop-content__title pt-5 pb-3 px-3 fw-bolder">
+            {items[item].title}
+          </h2>
+          <p className="desktop-content__body px-3 pb-5 text-primary fw-bold">
+            {items[item].body}
+          </p>
+          <a
+            href="/"
+            className="desktop-content__action px-3 pb-5 text-uppercase text-decoration-none"
+          >
+            <span className="desktop-content__action--title text-dark fw-bold pe-5">
+              {items[item].action}
+            </span>
+            <Image
+              src="./images/icon-arrow.svg"
+              alt="arrow icon"
+              className="desktop-content__action--icon"
+            />
+          </a>
+
+          <div className="desktop-content__controls position-absolute">
+            <Image
+              src="./images/icon-angle-left.svg"
+              alt="left angle icon"
+              className="desktop-content__controls--left-control bg-dark p-4"
+              onClick={decItem}
+            />
+            <Image
+              src="./images/icon-angle-right.svg"
+              alt="right angle icon"
+              className="desktop-content__controls--right-control bg-dark p-4"
+              onClick={incItem}
+            />
+          </div>
+        </Col>
       </Row>
     </header>
   );
